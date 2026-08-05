@@ -1,6 +1,6 @@
 const Order = require("../models/Order");
 const User = require("../models/User");
-const ProviderProfile = require("../models/ProviderProfile");
+const ProviderProfile = require("../models/Providerprofile");
 const { sendEmail } = require("../services/emailService");
 const stripe = require("../config/stripe");
 
