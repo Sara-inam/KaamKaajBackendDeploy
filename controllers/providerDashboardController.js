@@ -1,5 +1,5 @@
 const User = require("../models/User");
-const ProviderProfile = require("../models/ProviderProfile");
+const ProviderProfile = require("../models/Providerprofile");
 const Order = require("../models/Order");
 
 const getDashboard = async (req, res) => {
