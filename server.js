@@ -33,7 +33,7 @@ require("./routes/providerApplicationRoutes")
 );
 app.use(
 "/api/provider-profile",
-require("./routes/providerProfileRoutes")
+require("./routes/providerprofileroutes")
 );
 app.use("/api/orders", require("./routes/orderRoutes"));
 app.use("/api/provider/providerdashboard", providerDashboardRoutes);
