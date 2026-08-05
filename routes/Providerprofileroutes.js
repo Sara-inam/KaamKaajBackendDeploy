@@ -12,7 +12,7 @@ const {
   publishProfile,
   updateProviderByAdmin,
   deleteProviderByAdmin,
-} = require("../controllers/providerProfileController");
+} = require("../controllers/Providerprofilecontroller");
 
 const { protect, isAdmin } = require("../middleware/authMiddleware");
 const { upload } = require("../config/cloudinary");
