@@ -8,7 +8,7 @@ const transporter = require("../config/nodemailer");
 // ===========================
 const sendVerificationEmail = async (email, token, name) => {
   const verifyUrl = `https://kaam-kaaj-backend-deploy-ptc07pk6j.vercel.app/api/auth/verify-email/${token}`;
-  // 👆 apna current local IP daalein (ipconfig se check karein)
+  // apna current local IP daalein (ipconfig se check karein)
 
   const mailOptions = {
     from: `"Your App Name" <${process.env.EMAIL_USER}>`,
