@@ -7,7 +7,7 @@ const transporter = require("../config/nodemailer");
 // Helper: verification email bhejna
 // ===========================
 const sendVerificationEmail = async (email, token, name) => {
-  const verifyUrl = `http://192.168.1.10:5000/api/auth/verify-email/${token}`;
+  const verifyUrl = `https://kaam-kaaj-backend-deploy-ptc07pk6j.vercel.app/api/auth/verify-email/${token}`;
   // 👆 apna current local IP daalein (ipconfig se check karein)
 
   const mailOptions = {
@@ -182,13 +182,13 @@ const verifyEmail = async (req, res) => {
     if (!user) {
       return res
         .status(400)
-        .send(htmlPage("❌ Invalid Link", "This verification link is invalid or has already been used.", "#e53935"));
+        .send(htmlPage(" Invalid Link", "This verification link is invalid or has already been used.", "#e53935"));
     }
 
     if (user.verificationTokenExpiry < new Date()) {
       return res
         .status(400)
-        .send(htmlPage("⏰ Link Expired", "This verification link has expired. Please register again from the app.", "#e53935"));
+        .send(htmlPage(" Link Expired", "This verification link has expired. Please register again from the app.", "#e53935"));
     }
 
     user.isVerified = true;
@@ -198,7 +198,7 @@ const verifyEmail = async (req, res) => {
 
     return res
       .status(200)
-      .send(htmlPage("✅ Email Verified!", "Your email has been verified successfully. You can now go back to the app and login.", "#43a047"));
+      .send(htmlPage(" Email Verified!", "Your email has been verified successfully. You can now go back to the app and login.", "#43a047"));
   } catch (error) {
     return res.status(500).send(htmlPage("⚠️ Something went wrong", "Please try again later.", "#e53935"));
   }
