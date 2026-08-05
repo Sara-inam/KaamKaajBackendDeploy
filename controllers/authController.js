@@ -7,8 +7,10 @@ const transporter = require("../config/nodemailer");
 // Helper: verification email bhejna
 // ===========================
 const sendVerificationEmail = async (email, token, name) => {
-  const verifyUrl = `https://kaam-kaaj-backend-deploy-ptc07pk6j.vercel.app/api/auth/verify-email/${token}`;
-  // apna current local IP daalein (ipconfig se check karein)
+  const backendBaseUrl =
+      process.env.BACKEND_URL ||
+      "https://kaam-kaaj-backend-deploy-ptc07pk6j.vercel.app";
+  const verifyUrl = `${backendBaseUrl}/api/auth/verify-email/${token}`;
 
   const mailOptions = {
     from: `"Your App Name" <${process.env.EMAIL_USER}>`,
