@@ -1,4 +1,4 @@
-const ProviderProfile = require("../models/ProviderProfile");
+const ProviderProfile = require("../models/Providerprofile");
 const User = require("../models/User");
 const { sendEmail } = require("../services/emailService");
 const { cloudinary } = require("../config/cloudinary");
